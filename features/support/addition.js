@@ -1,6 +1,6 @@
 const {Given,When,Then} = require('cucumber')
 const assert = require('assert')
-const sleep = require('sleep')
+const sleep = require('system-sleep')
 
 let answer
 
@@ -10,12 +10,12 @@ Given('I have a Calculator', function () {
 
 Given('I start with {int}', function (int) {
   answer = int
-  sleep.msleep(100)
+  sleep(100)
 })
 
 When('I add {int}', function (int) {
   answer = answer + int
-  sleep.msleep(200)
+  sleep(200)
 })
 
 When('I add the following numbers:', function (dataTable) {
@@ -23,10 +23,10 @@ When('I add the following numbers:', function (dataTable) {
     .map(row => row[0])
     .map(v => parseInt(v))
     .reduce((current, next) => current + next, answer)
-  sleep.msleep(500)
+  sleep(500)
 })
 
 Then('the sum should be {int}', function (int) {
   assert(answer, int)
-  sleep.msleep(100)
+  sleep(100)
 })
