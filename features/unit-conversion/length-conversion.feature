@@ -23,3 +23,4 @@ Feature: Length Conversion
       | inch | centimetre |
       | 1.0  | 2.54       |
       | 5.0  | 12.7       |
+      | 3.0  | 12.9       |
